@@ -8,7 +8,6 @@ import {Menu, Icon} from 'antd';
 const SubMenu = Menu.SubMenu;
 import './index.less';
 import menus from '../../../config/menus'
-import { Affix} from 'antd';
 
 
 class SiderMenu extends Component {
@@ -24,7 +23,7 @@ class SiderMenu extends Component {
           key={item.key}
           title={
             <span>
-            <Icon type={item.type} />
+            {/*<Icon type={item.type} />*/}
             <span>{item.content}</span>
           </span>
           }
@@ -58,17 +57,15 @@ class SiderMenu extends Component {
     const {location} = this.props;
 
     return (
-      <Affix>
       <Menu
-        inlineIndent="40"
-        className="aside-container menu-site"
-        mode="inline"
+        className="top-menu"
+        mode="horizontal"
         defaultSelectedKeys={['/wallet']}
         selectedKeys={[location.pathname]}
+        triggerSubMenuAction='click'
       >
         {this.getNavMenuItems(menus)}
       </Menu>
-      </Affix>
     );
   }
 }

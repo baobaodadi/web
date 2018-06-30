@@ -28,44 +28,14 @@ class Index extends Component {
 
   componentDidMount() {
     console.log(2121)
-    this.props.fetchArticleList();
+    // this.props.fetchArticleList();
   }
 
   render() {
-    const {list} = this.props;
+    // const {list} = this.props;
     return (
       <div>
-        <List>
-          {
-            list && list.map((item, i) =>
-              <List.Item key={i}>
-                <Link
-                  to={'/article/' + parseInt(i + 1)}
-                >
-                  {/*<Icon type={item.type}/>*/}
-                  <span> {item[i + 1]}</span>
-                </Link>
-              </List.Item>
-            )
-          }
-        </List>
-        <Row gutter={16}>
-          {
-            list && list.map((item, i) =>
-
-              <Col xs={{ span: 10}} sm={{ span: 8}}  md={{ span: 8}} lg={{ span: 6}} xl={{ span: 4}} key={i}>
-                <Link
-                  to={'/article/' + parseInt(i + 1)}
-                >
-                <Card title={item[i + 1]}>
-                  <p>Card content</p>
-                </Card>
-                </Link>
-              </Col>
-
-            )
-          }
-        </Row>
+        123
       </div>
     );
   }
@@ -79,10 +49,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchArticleList: (payload) => dispatch({
     type: actionTypes.FETCH_ARTICLE_LIST,
-    payload
-  }),
-  fetchUserArticle: (payload) => dispatch({
-    type: actionTypes.FETCH_USER_ARTICLE,
     payload
   }),
 });
